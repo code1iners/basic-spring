@@ -18,14 +18,13 @@ public class RequestHeaderController {
 
     @RequestMapping("/headers")
     public String headers(
-            HttpServletRequest  request,
+            HttpServletRequest request,
             HttpServletResponse response,
             HttpMethod httpMethod,
             Locale locale,
             @RequestHeader MultiValueMap<String, String> headerMap,
             @RequestHeader("host") String host,
-            @CookieValue(value = "myCookie", required = false) String cookie
-            ) {
+            @CookieValue(value = "myCookie", required = false) String cookie) {
 
         log.info("request={}", request);
         log.info("response={}", response);
